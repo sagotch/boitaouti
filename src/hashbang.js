@@ -56,21 +56,23 @@ function hashbang (container, root, router, def)
         var nodes = root.getElementsByTagName ('a') ;
         for (var i = 0; i < nodes.length; i++)
         {
-            var node = nodes [i] ;
-            if ( node.protocol == document.location.protocol &&
-                 node.host == document.location.host )
-            {
-                var url = router (node.getAttribute ('href')) ;
-                node.addEventListener
-                ('click', function (e)
+            (function (i)
+             {
+                 var node = nodes [i] ;
+                 if ( node.protocol == document.location.protocol &&
+                      node.host == document.location.host )
                  {
-                     e.preventDefault () ;
-                     window.history.pushState
-                     (null, "", document.location.origin + "#!" + url) ;
-                     load (url) ;
-                 }, false) ;
-            }
-
+                     var url = router (node.getAttribute ('href')) ;
+                     node.addEventListener
+                     ('click', function (e)
+                      {
+                          e.preventDefault () ;
+                          window.history.pushState
+                          (null, "", document.location.origin + "#!" + url) ;
+                          load (url) ;
+                      }, false) ;
+                 }
+             }) (i);
         }
     } ;
 
