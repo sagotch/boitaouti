@@ -53,7 +53,7 @@ function hashbang (container, root, router, def)
 
     var hookLinks = function ()
     {
-        var nodes = container.getElementsByTagName ('a') ;
+        var nodes = root.getElementsByTagName ('a') ;
         for (var i = 0; i < nodes.length; i++)
         {
             var node = nodes [i] ;
@@ -80,4 +80,6 @@ function hashbang (container, root, router, def)
         load (url)
     else if (def != null)
         load (def)
+    else
+        hookLinks ()
 }
