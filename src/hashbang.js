@@ -22,13 +22,18 @@
  *
  * In order to prevent a link from being hooked, set its
  * [data-hashbang-skip] to "true".
+ * In order to trigger another action after page loading when a link
+ * is clicked, use the [callback] variable.
  */
 
-// [container]: element where to display the page.
-// [root]: element whose link tags must be hooked.
-// [router]: function to create the real path to fetch resources.
-// [def]: default url to be displayed if no page is specified.
-function hashbang (container, root, router, def)
+/**
+ * [container]: element where to display the page.
+ * [root]: element whose link tags must be hooked.
+ * [router]: function to create the real path to fetch resources.
+ * [def]: default url to be displayed if no page is specified.
+ * [callback]: clicks on a hooked link trigger [callback (event)].
+ */
+function hashbang (container, root, router, def, callback)
 {
     var container = container ;
     var root = root || container ;
@@ -76,6 +81,7 @@ function hashbang (container, root, router, def)
                               (null, "",
                                document.location.origin + "#!" + url) ;
                               load (url) ;
+                              if (callback) callback (e) ;
                           }, false) ;
                      }
                  }
