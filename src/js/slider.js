@@ -1,5 +1,7 @@
 /** slider.js by Julien Sagot (aka sagotch) */
 
+/** Version 0.0.0 */
+
 /**
  * Given a DOM element and a set of image sources, a Slider object,
  * will use the element's background to display.

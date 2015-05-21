@@ -1,4 +1,6 @@
-/* hashbang.js by Julien Sagot (aka sagotch). */
+/** hashbang.js by Julien Sagot (aka sagotch). */
+
+/** Version 0.1.0 */
 
 /**
  * /!\ KNOWN ISSUES /!\

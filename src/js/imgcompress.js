@@ -1,5 +1,7 @@
 /** imgcompress.js by Julien Sagot (aka sagtoch) */
 
+/** Version 0.0.0 */
+
 /**
  * TODO:
  * - revokeObjectURL
