@@ -19,7 +19,9 @@
  *  <script>
  *    hashbang (document.getElementById ("container"), document) ;
  *  </script>
-
+ *
+ * In order to prevent a link from being hooked, set its
+ * [data-hashbang-skip] to "true".
  */
 
 // [container]: element where to display the page.
@@ -59,18 +61,23 @@ function hashbang (container, root, router, def)
             (function (i)
              {
                  var node = nodes [i] ;
-                 if ( node.protocol == document.location.protocol &&
-                      node.host == document.location.host )
+                 if (node.getAttribute ("data-hashbang-skip") != "true")
                  {
-                     var url = router (node.getAttribute ('href')) ;
-                     node.addEventListener
-                     ('click', function (e)
-                      {
-                          e.preventDefault () ;
-                          window.history.pushState
-                          (null, "", document.location.origin + "#!" + url) ;
-                          load (url) ;
-                      }, false) ;
+                     node.setAttribute ("data-hashbang-skip", "true") ;
+                     if (node.protocol == document.location.protocol &&
+                         node.host == document.location.host )
+                     {
+                         var url = router (node.getAttribute ('href')) ;
+                         node.addEventListener
+                         ('click', function (e)
+                          {
+                              e.preventDefault () ;
+                              window.history.pushState
+                              (null, "",
+                               document.location.origin + "#!" + url) ;
+                              load (url) ;
+                          }, false) ;
+                     }
                  }
              }) (i);
         }
