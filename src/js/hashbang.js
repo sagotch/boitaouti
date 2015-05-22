@@ -5,8 +5,9 @@
 /**
  * /!\ KNOWN ISSUES /!\
  *
- * In order to make hashbang.js works properly, every link href must be
- * an absolute path or relative to the initial page loaded.
+ * In order to make hashbang.js works properly, main page must be
+ * an index.html located at the server root, and every link href must be
+ * an absolute path or relative to server root.
  *
  * Typing an hashbang address in the navigation bar only works
  * if you are not already browsing the site, unless you refresh the
