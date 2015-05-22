@@ -49,11 +49,11 @@ function hashbang (container, root, router, def, callback)
 
         xmlhttp.onreadystatechange = function ()
         {
-	    if (xmlhttp.readyState === 4 && xmlhttp.status === 200)
+	          if (xmlhttp.readyState === 4 && xmlhttp.status === 200)
             {
-	        container.innerHTML = xmlhttp.responseText ;
+	              container.innerHTML = xmlhttp.responseText ;
                 hookLinks () ;
-	    }
+	          }
         };
 
         xmlhttp.open ("GET", url, true) ;
