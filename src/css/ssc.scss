@@ -1,0 +1,103 @@
+* { box-sizing: border-box ; }
+
+/* Colors */
+
+$black  : #000000 ;
+$blue   : #19B5FE ;
+$gray   : #95A5A6 ;
+$green  : #26A65B ;
+$orange : #F89406 ;
+$pink   : #F62459 ;
+$purple : #9A12B3 ;
+$red    : #F22613 ;
+$white  : #FFFFFF ;
+$yellow : #F7CA18 ;
+
+$main-font : "DejaVu Sans", sans-serif ;
+body { font-family: $main-font ; }
+
+/*******************/
+/*   Grid system   */
+/*******************/
+
+.grid {
+
+  &:before, &:after {
+    display: table ;
+    content: "" ;
+    line-height: 0 ;
+  }
+
+  &:after {
+    clear: both ;
+  }
+
+  & > * {
+    display: inline-block ;
+    float: left ;
+  }
+
+  & > & {
+    clear: none ;
+    margin: 0 !important ;
+  }
+
+}
+
+@for $w from 1 through 10 { .w-#{$w * 10} { width: #{$w * 10%} ; } }
+.w-25 { width: 25% ; }
+.w-33 { width: 33.33333333% ; }
+.w-66 { width: 66.66666667% ; }
+.w-75 { width: 75% ;}
+
+/***************/
+/*   Buttons   */
+/***************/
+
+.btn {
+  display: inline-block ;
+  border: 0 ;
+  text-decoration: none ;
+  line-height: normal ;
+  padding: .5rem 1rem ;
+  transition: all 0.2s ;
+
+  &:hover, &:active { opacity: 0.5 ; }
+
+  @mixin btn ($bg, $fg) { background-color: $bg ; color: $fg ;}
+  &.black  { @include btn ($black,  $white) ; }
+  &.blue   { @include btn ($blue,   $white) ; }
+  &.gray   { @include btn ($gray,   $white) ; }
+  &.green  { @include btn ($green,  $white) ; }
+  &.orange { @include btn ($orange, $white) ; }
+  &.pink   { @include btn ($pink,   $white) ; }
+  &.purple { @include btn ($purple, $white) ; }
+  &.red    { @include btn ($red,    $white) ; }
+  &.white  { @include btn ($white,  $black) ; }
+  &.yellow { @include btn ($yellow, $white) ; }
+
+}
+
+/*********************/
+/*   Message boxes   */
+/*********************/
+
+.msg {
+
+	padding: 1rem ;
+	line-height: 1.2;
+	border-left: 0.25rem solid ;
+
+  @mixin msg ($bg) { border-color:$bg; background-color:lighten($bg, 30%); }
+  &.black  { @include msg ($black) ; }
+  &.blue   { @include msg ($blue) ; }
+  &.gray   { @include msg ($gray) ; }
+  &.green  { @include msg ($green) ; }
+  &.orange { @include msg ($orange) ; }
+  &.pink   { @include msg ($pink) ; }
+  &.purple { @include msg ($purple) ; }
+  &.red    { @include msg ($red) ; }
+  &.white  { @include msg ($white) ; }
+  &.yellow { @include msg ($yellow) ; }
+
+}
