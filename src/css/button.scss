@@ -1,0 +1,21 @@
+/***************/
+/*   Buttons   */
+/***************/
+
+@mixin btn ($bg, $fg) {
+
+  display: inline-block ;
+  border: 0 ;
+  text-decoration: none ;
+  line-height: normal ;
+  padding: .5rem 1rem ;
+  transition: all 0.2s ;
+
+  background-color: $bg ;
+  color: $fg ;
+
+  &:hover, &:active {
+    background-color: lighten($bg, 30%) ;
+  }
+
+}
