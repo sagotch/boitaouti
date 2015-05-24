@@ -1,0 +1,116 @@
+$black  : #000000 ;
+$blue   : #19B5FE ;
+$gray   : #95A5A6 ;
+$green  : #26A65B ;
+$orange : #F89406 ;
+$pink   : #F62459 ;
+$purple : #9A12B3 ;
+$red    : #F22613 ;
+$white  : #FFFFFF ;
+$yellow : #F7CA18 ;
+
+@mixin reset () {
+    box-sizing : border-box ;
+    margin: 0 ;
+    padding: 0 ;
+}
+
+@mixin clearfix () {
+    overflow: hidden ;
+}
+
+/***************/
+/* GRID SYSTEM */
+/***************/
+
+@mixin grid () {
+
+    &:before, &:after {
+        display: table ;
+        content: "" ;
+        line-height: 0 ;
+    }
+
+    &:after {
+        clear: both ;
+    }
+
+    & > * {
+        display: inline-block ;
+        float: left ;
+    }
+
+    & > & {
+        clear: none ;
+        margin: 0 !important ;
+    }
+
+}
+
+/**********/
+/* BUTTON */
+/**********/
+
+@mixin button ($bg, $fg) {
+
+    text-decoration: none ;
+    line-height: normal ;
+    padding: .5rem 1rem ;
+    transition: all 0.2s ;
+
+    background-color: $bg ;
+    color: $fg ;
+
+    &:hover, &:active {
+        background-color: lighten($bg, 30%) ;
+    }
+
+}
+
+
+/***************/
+/* MESSAGE BOX */
+/***************/
+
+@mixin message-box ($bg) {
+
+	  padding: 1rem ;
+	  line-height: 1.2;
+	  border-left: 0.5rem solid ;
+
+    border-color: $bg;
+    background-color: lighten($bg, 30%);
+}
+
+/**********/
+/* NAVBAR */
+/**********/
+
+@mixin navbar () {
+
+    display: block ;
+    width: 100% ;
+
+    & > * {
+        float: left ;
+    }
+
+}
+
+/************/
+/* DROPDOWN */
+/************/
+
+@mixin dropdown ($content) {
+
+    & > #{$content} {
+        display: none ;
+        position: absolute ;
+    }
+
+    &:hover > #{$content},
+    & > #{$content}:hover {
+        display: block ;
+    }
+
+}
