@@ -1,16 +1,13 @@
-/****************/
-/*   Dropdown   */
-/****************/
+@mixin dropdown ($content) {
 
-.dropdown {
+    & > #{$content} {
+        display: none ;
+        position: absolute ;
+    }
 
-  & > ul {
-    display: none ;
-    border: 1px solid black ;
-  }
-
-  &:hover > ul {
-    display: inline-block ;
-  }
+    &:hover > #{$content},
+    & > #{$content}:hover {
+        display: block ;
+    }
 
 }

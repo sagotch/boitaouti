@@ -1,27 +1,23 @@
-/*******************/
-/*   Grid system   */
-/*******************/
+@mixin grid () {
 
-.grid {
+    &:before, &:after {
+        display: table ;
+        content: "" ;
+        line-height: 0 ;
+    }
 
-  &:before, &:after {
-    display: table ;
-    content: "" ;
-    line-height: 0 ;
-  }
+    &:after {
+        clear: both ;
+    }
 
-  &:after {
-    clear: both ;
-  }
+    & > * {
+        display: inline-block ;
+        float: left ;
+    }
 
-  & > * {
-    display: inline-block ;
-    float: left ;
-  }
-
-  & > & {
-    clear: none ;
-    margin: 0 !important ;
-  }
+    & > & {
+        clear: none ;
+        margin: 0 !important ;
+    }
 
 }

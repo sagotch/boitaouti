@@ -1,13 +1,9 @@
-/*********************/
-/*   Message boxes   */
-/*********************/
-
 @mixin msg ($bg) {
 
-	padding: 1rem ;
-	line-height: 1.2;
-	border-left: 0.25rem solid ;
+	  padding: 1rem ;
+	  line-height: 1.2;
+	  border-left: 0.5rem solid ;
 
-  border-color: $bg;
-  background-color: lighten($bg, 30%);
+    border-color: $bg;
+    background-color: lighten($bg, 30%);
 }
