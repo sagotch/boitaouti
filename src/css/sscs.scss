@@ -194,3 +194,46 @@
     }
 
 }
+
+/**********/
+/* SWITCH */
+/**********/
+
+@mixin switch ($w, $h, $m, $r, $on, $off) {
+
+    display: none ;
+
+    & + label {
+        display: block ;
+        position: relative ;
+        cursor: pointer ;
+        border: $m solid ;
+        @include radius ( #{$h * $r} ) ;
+        width: $w ;
+        height: $h ;
+        padding: $m ;
+    }
+
+    & + label:after {
+        display: block ;
+        position: absolute ;
+        content: "" ;
+        top: $m ;
+        bottom: $m ;
+        @include radius (#{($h - $m) * $r}) ;
+        transition: all 0.4s ;
+    }
+
+    &:checked {
+       & + label { border-color: $on ; }
+       & + label:after { left: #{$w / 2} ; right: $m ;
+                         background-color: $on ; }
+    }
+
+    &:not(:checked) {
+       & + label { border-color: $off ; }
+       & + label:after { left: $m ; right: #{$w / 2} ;
+                         background-color: $off ;
+        }
+    }
+}
