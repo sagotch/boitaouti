@@ -156,3 +156,19 @@
     }
 
 }
+
+/*****************/
+/* STRIPPED LIST */
+/*****************/
+
+@mixin stripped-list ($border) {
+
+    & > li {
+        border-bottom: $border ;
+    }
+
+    &:last-child {
+        border-bottom: 0 ;
+    }
+
+}
