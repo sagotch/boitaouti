@@ -56,6 +56,15 @@
 @mixin right  () { margin-left: auto ;                      }
 
 
+@mixin radius ($radius) { border-radius: $radius ; }
+@mixin shadow ($top: 0,
+               $left: 1px,
+               $blur: 2px,
+               $color: rgba(0,0,0,0.12),
+               $inset:"") {
+    box-shadow: $top $left $blur $color unquote($inset) ;
+}
+
 /***************/
 /* GRID SYSTEM */
 /***************/
@@ -122,7 +131,6 @@
     }
 
 }
-
 
 /***************/
 /* MESSAGE BOX */
