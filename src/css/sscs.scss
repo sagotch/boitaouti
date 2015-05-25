@@ -70,22 +70,41 @@
 
 }
 
-/**********/
-/* BUTTON */
-/**********/
+/***********/
+/* BUTTONS */
+/***********/
 
-@mixin button ($bg, $fg) {
-
+@mixin button-base () {
     text-decoration: none ;
     line-height: normal ;
     padding: .5rem 1rem ;
     transition: all 0.2s ;
+}
+
+@mixin button-fill ($bg, $fg) {
+
+    @include button-base () ;
 
     background-color: $bg ;
     color: $fg ;
 
     &:hover, &:active {
         background-color: lighten($bg, 30%) ;
+    }
+
+}
+
+@mixin button-outline ($color, $hover) {
+
+    @include button-base () ;
+
+    background-color: transparent ;
+    color: $color ;
+    border: 2px solid $color ;
+
+    &:hover, &:active {
+        background-color: $color ;
+        color: $hover ;
     }
 
 }
