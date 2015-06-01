@@ -225,15 +225,15 @@
     }
 
     &:checked {
-       & + label { border-color: $on ; }
-       & + label:after { left: #{$w / 2} ; right: $m ;
-                         background-color: $on ; }
+        & + label { border-color: $on ; }
+        & + label:after { left: #{$w / 2} ; right: $m ;
+                          background-color: $on ; }
     }
 
     &:not(:checked) {
-       & + label { border-color: $off ; }
-       & + label:after { left: $m ; right: #{$w / 2} ;
-                         background-color: $off ;
-        }
+        & + label { border-color: $off ; }
+        & + label:after { left: $m ; right: #{$w / 2} ;
+                          background-color: $off ;
+                        }
     }
 }
