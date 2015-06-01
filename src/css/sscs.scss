@@ -237,3 +237,16 @@
                         }
     }
 }
+
+/**********/
+/* INPUTS */
+/*********/
+
+@mixin input-text ($border: 2px solid #CCC, $color: #444) {
+    border: $border ;
+	  color: $color ;
+	  font-weight: normal ;
+	  vertical-align: middle ;
+	  padding: 0.5rem 1rem ;
+	  line-height: 1 ;
+}
