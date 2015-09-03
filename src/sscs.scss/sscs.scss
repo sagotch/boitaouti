@@ -185,11 +185,11 @@
 
 @mixin stripped-list ($border) {
 
-    & > li {
+    & {
         border-bottom: $border ;
     }
 
-    &:last-child {
+    &:last-of-type {
         border-bottom: 0 ;
     }
 

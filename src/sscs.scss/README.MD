@@ -51,8 +51,8 @@ and display them on hover.
 
 ## Stripped list
 
-`stripped-list ($border)` apply `$border` at the bottom of all `li`
-children except the last one.
+`stripped-list ($border)` apply `$border` at the bottom of
+every element of the current type, except the last one.
 
 ## Switches
 
